@@ -29,6 +29,7 @@ target 'firebaseAnalytics' do
   # your other libraries will follow here!
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
   pod 'Firebase/Analytics'
+  pod 'GoogleIDFASupport', '~> 3.14.0'
 
 end
 
