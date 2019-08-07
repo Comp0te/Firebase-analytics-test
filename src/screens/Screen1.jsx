@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Button } from 'react-native';
-import firebase from 'react-native-firebase';
+import { StyleSheet, Text, View } from 'react-native';
+import CommonButton from '../components/CommonButton';
 
 export default class Screen1 extends Component {
-  componentDidMount() {
-    firebase.analytics()
-      .logEvent(`bla_bla_${Platform.OS == 'ios' ? 'Ios' : 'Android'}`, { id: '12345' });
-    firebase.analytics().setCurrentScreen('screen1', 'screen1');
-  }
-
   onButtonPress = () => {
     this.props.navigation.navigate('screen2');
   };
@@ -18,9 +12,10 @@ export default class Screen1 extends Component {
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to Screen # 1</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Button
+        <CommonButton
+          title='to Screen2 with analytics'
           onPress={this.onButtonPress}
-          title={'To screen 2'}
+          event='onPress_button_to_screen_2'
         />
       </View>
     );
