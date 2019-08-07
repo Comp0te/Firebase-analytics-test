@@ -1,6 +1,7 @@
 package com.firebaseanalytics;
 
 import android.app.Application;
+import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 
 import com.facebook.react.ReactApplication;
 import io.invertase.firebase.RNFirebasePackage;
@@ -24,7 +25,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNFirebasePackage()
+            new RNFirebasePackage(),
+              new RNFirebaseAnalyticsPackage()
       );
     }
 
